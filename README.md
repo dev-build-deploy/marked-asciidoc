@@ -11,9 +11,9 @@ An Asciidoc renderer for [marked](https://www.npmjs.com/package/marked).
 
 ```typescript
 import * as marked from "marked";
-import { Asciidoc } from "@dev-build-deploy/marked-asciidoc";
+import { AsciiDoc } from "@dev-build-deploy/marked-asciidoc";
 
-marked.use({ renderer: Asciidoc })
+marked.use({ renderer: AsciiDoc })
 marked.parse("# Hello world!");
 ```
 
@@ -26,6 +26,3 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 ## License
 
 - [MIT](./LICENSES/MIT.txt) © 2023 Kevin de Jong \<monkaii@hotmail.com\>
-
-[SemVer 2.0.0]: https://semver.org
-[CalVer]: https://calver.org

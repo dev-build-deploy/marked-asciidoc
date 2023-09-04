@@ -13,8 +13,8 @@ describe("Render", () => {
   test("Render markdown", () => {
     const data = fs.readFileSync(path.join(__dirname, "fixtures", "full-usecase.md"), "utf-8");
     const expected = fs.readFileSync(path.join(__dirname, "fixtures", "full-usecase.md.asciidoc"), "utf-8");
-    
+
     marked.use({ renderer: AsciiDoc });
     expect(marked.parse(data)).toBe(expected);
   });
-})
+});
