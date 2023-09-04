@@ -5,7 +5,7 @@
 
 /**
  * An AsciiDoc renderer for Marked.
- * 
+ *
  * @see https://www.npmjs.com/package/marked
  */
 export const AsciiDoc = {
@@ -37,9 +37,9 @@ export const AsciiDoc = {
   },
 
   /**
-   * NOTE: heading of depth 1 will enforce an empty line after 
-   *       the heading as that line is reseverd for document metadata) 
-   * @returns heading 
+   * NOTE: heading of depth 1 will enforce an empty line after
+   *       the heading as that line is reseverd for document metadata)
+   * @returns heading
    * */
   heading(text: string, level: number): string {
     return `${"=".repeat(level)} ${text}\n${level === 1 ? "\n" : ""}`;
@@ -47,7 +47,7 @@ export const AsciiDoc = {
 
   /** @returns a horizontal ruler */
   hr(): string {
-    return "'''\n\n"
+    return "'''\n\n";
   },
 
   /** @returns a list, followed by an empty line */
@@ -84,7 +84,7 @@ export const AsciiDoc = {
 
   /** @returns a single table row */
   tablerow(content: string): string {
-    return `${content}\n`
+    return `${content}\n`;
   },
 
   /** @returns a single table cell */
@@ -93,7 +93,7 @@ export const AsciiDoc = {
     return `| ${content} `;
   },
 
-  /* 
+  /*
    * Inline-level renderer methods
    */
 
@@ -119,12 +119,12 @@ export const AsciiDoc = {
 
   /** @returns string formatted with strikethrough */
   del(text: string): string {
-    return `[.line-through]#${text}#`
+    return `[.line-through]#${text}#`;
   },
 
   /** @returns an interactive link */
   link(href: string, _title: string | null | undefined, text: string): string {
-    return (text !== href ? `${href}[${text}]` : href)
+    return text !== href ? `${href}[${text}]` : href;
   },
 
   /** @returns an inline image */
