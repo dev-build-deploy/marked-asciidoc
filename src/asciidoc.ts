@@ -63,7 +63,7 @@ export const AsciiDoc = {
 
   /** @returns a checkbox */
   checkbox(checked: boolean): string {
-    return `[${checked ? "x" : " "}] `;
+    return `[${checked ? "x" : " "}]`;
   },
 
   /** @returns a paragraph of text */
