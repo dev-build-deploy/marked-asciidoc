@@ -19,6 +19,16 @@ lines
 
 * List item 1
 * List item 2
+* List item 3
+  which is a list spanning multiple lines and paragraphs.
+
+  And includes block items;
+
+  ```typescript
+  function doit(stair: Stair): Stair[] {
+    return stair.split("CENTER") as Stair[];
+  }
+  ```
 
 ## Formatting
 
