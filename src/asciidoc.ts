@@ -58,7 +58,7 @@ export const AsciiDoc = {
 
   /** @returns a list item prefixed with '*' */
   listitem(text: string): string {
-    return `* ${text}\n`;
+    return `* ${text.trimEnd().replace(/^\r?\n/gm, "+\n")}\n`;
   },
 
   /** @returns a checkbox */
