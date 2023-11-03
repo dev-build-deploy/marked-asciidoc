@@ -53,12 +53,33 @@ export const AsciiDoc = {
   /** @returns a list, followed by an empty line */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   list(body: string, _ordered: boolean): string {
-    return `${body}\n`;
+    return `\n${body}\n`;
   },
 
-  /** @returns a list item prefixed with '*' */
+  /**
+   * Updates the listitem (including sub items) to use the correct prefix ('*')
+   * and adds a '+' to the start of each empty line to support paragraphs
+   *
+   * @returns a list item prefixed with '*'
+   */
   listitem(text: string): string {
-    return `* ${text.trimEnd().replace(/^\r?\n/gm, "+\n")}\n`;
+    let result = text;
+    let offset = 0;
+
+    // Increases the depth of the list items by one
+    for (const item of text.matchAll(/^\*+\s+/gm)) {
+      if (item.index === undefined) continue;
+      result = result.slice(0, item.index + offset) + "*" + result.slice(item.index + offset);
+      offset += 1;
+    }
+
+    // Converts paragraph to bullet point
+    result = `* ${result.trimEnd().replace(/^\r?\n/gm, "+\n")}\n`;
+
+    // Replaces multiple '+' with a single '+'
+    result = result.replace(/(\+\n){2,}/gm, "+\n");
+
+    return result;
   },
 
   /** @returns a checkbox */
