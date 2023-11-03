@@ -16,10 +16,19 @@ lines
 </div>
 
 ## Lists
+This chapter contains lists:
+* List item 1.1
+  * Item 1.1.1
+    * Item 1.1.1.1
 
-* List item 1
-* List item 2
-* List item 3
+      We can add more details
+    * Item 1.1.1.2
+
+      And here
+
+      Which is providing multiple empty lines
+* List item 1.2
+* List item 1.3
   which is a list spanning multiple lines and paragraphs.
 
   And includes block items;
@@ -29,6 +38,17 @@ lines
     return stair.split("CENTER") as Stair[];
   }
   ```
+* List item 1.4
+  
+  This one contains lists in lists
+
+  * Item A
+  * Item B
+
+  Which is seperated from
+
+  * Item C
+  * Item D
 
 ## Formatting
 

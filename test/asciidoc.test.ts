@@ -10,7 +10,7 @@ import * as path from "path";
 import { AsciiDoc } from "../src";
 
 describe("Render", () => {
-  test("Render markdown", () => {
+  test("Render Asciidoc", () => {
     const data = fs.readFileSync(path.join(__dirname, "fixtures", "full-usecase.md"), "utf-8");
     const expected = fs.readFileSync(path.join(__dirname, "fixtures", "full-usecase.md.asciidoc"), "utf-8");
 
